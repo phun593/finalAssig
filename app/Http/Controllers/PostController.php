@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\newProduct;
+use \App\BuyItem;
 class PostController extends Controller
 {
     /**
@@ -13,6 +14,12 @@ class PostController extends Controller
      */
     public function newProduct()
     {
+        
+
+
+
+
+
         return view ('newProduct');
     }
 
@@ -39,9 +46,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function buyItem(Request $request)
     {
-        //
+        $item = new BuyItem;
+        $item->name = $request->input('name');
+        $item->price = $request->input('price');
+        $item->discription = $request->input('discription');
+        $item->save();
+
+
+    
     }
 
     /**
@@ -50,9 +64,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
+
+      
+        $item = newProduct::all();
+        $data['item'] = $item;
+        return($item);
+        
+    
     }
 
     /**
@@ -61,9 +82,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function  total()
     {
-        //
+        $item =  BuyItem::all()->sum('price');
+        
+        return($item);
+
     }
 
     /**

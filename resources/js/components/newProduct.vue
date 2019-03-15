@@ -61,7 +61,7 @@
          // alert (5);
         
         axios.post('/api/newProduct',this.$data);
-
+          Event.$emit('itemCreated',{ name:this.name});
         
         
 

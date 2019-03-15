@@ -3,26 +3,7 @@
   <div class="content-wrapper">
     
     <div class="row">
-      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-        <div class="card card-statistics">
-          <div class="card-body">
-            <div class="clearfix">
-              <div class="float-left">
-                <i class="mdi mdi-cube text-danger icon-lg"></i>
-              </div>
-              <div class="float-right">
-                <p class="mb-0 text-right">Total Revenue</p>
-                <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">$65,6</h3>
-                </div>
-              </div>
-            </div>
-            <p class="text-muted mt-3 mb-0">
-              <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth
-            </p>
-          </div>
-        </div>
-      </div>
+      <total-revenue></total-revenue>
       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
         <div class="card card-statistics">
           <div class="card-body">
@@ -135,67 +116,11 @@
       </div>
     </div>
     
-    <div class="row">
-      <div class="col-lg-12 grid-margin">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Orders</h4>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>
-                      #
-                    </th>
-                    <th>
-                      Nmae
-                    </th>
-                    <th>
-                      Discription
-                    </th>
-                    <th>
-                      Price
-                    </th>
-                    <th>
-                      Amunt 
-                    </th>
-                    <th>
-                      Deadline
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="font-weight-medium">
-                      1
-                    </td>
-                    <td>
-                      Herman Beck
-                    </td>
-                    <td>
-                      <div class="progress">
-                        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td>
-                      $ 77.99
-                    </td>
-                    <td class="text-danger"> 53.64%
-                      <i class="mdi mdi-arrow-down"></i>
-                    </td>
-                    <td>
-                      May 15, 2015
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <product-list ></product-list>
+
+
+
+
     <div class="row">
       <div class="col-12 grid-margin">
         <div class="card">
@@ -213,7 +138,7 @@
                     <p class="mb-0 ellipsis">Donec rutrum congue leo eget malesuada.</p>
                   </div>
                   <p class="text-gray ellipsis mb-2">Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim
-                    vivamus.
+                    vivamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   </p>
                   <div class="row text-gray d-md-flex d-none">
                     <div class="col-4 d-flex">
@@ -231,17 +156,7 @@
                     <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manage
                     </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">
-                      <i class="fa fa-reply fa-fw"></i>Quick reply</a>
-                      <a class="dropdown-item" href="#">
-                      <i class="fa fa-history fa-fw"></i>Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                      <i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
-                      <a class="dropdown-item" href="#">
-                      <i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
@@ -252,6 +167,11 @@
         </div>
       </div>
     </div>
+
+
+
+
+
   </div>
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
