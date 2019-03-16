@@ -52,6 +52,7 @@ class PostController extends Controller
         $item->name = $request->input('name');
         $item->price = $request->input('price');
         $item->discription = $request->input('discription');
+        $item->buy = $request->input('buy');
         $item->save();
 
 
@@ -89,6 +90,14 @@ class PostController extends Controller
         return($item);
 
     }
+       public function  orders()
+    {
+        $item =  BuyItem::all()->count('price');
+        
+        return($item);
+
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -97,19 +106,21 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function best()
     {
-        //
+     $best = BuyItem::all()->max('price');
+
+    
+
+     return($best);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+   
+    public function  worst()
     {
-        //
+        $worst = BuyItem::all()->min('price');
+        
+        return($worst);
     }
 }

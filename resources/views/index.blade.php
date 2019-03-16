@@ -9,7 +9,7 @@
   <title>Star Dashboard </title>
   <!-- plugins:css -->
   <link rel="stylesheet" type="text/css" href="{{url('/')}}/css/app.css">
-  <link rel="stylesheet" type="text/css" href="{{url('/')}}/css/materialdesignicons.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="{{url('/')}}/css/materialdesignicons.min.css"> -->
   <link rel="stylesheet" type="text/css" href="{{url('/')}}/css/vendor.bundle.base.css">
   <link rel="stylesheet" type="text/css" href="{{url('/')}}/css/vendor.bundle.addons.css">
   <!-- endinject -->

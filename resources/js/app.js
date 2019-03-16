@@ -26,6 +26,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('new-product', require('./components/newProduct.vue').default);
 Vue.component('product-list', require('./components/productList.vue').default);
 Vue.component('total-revenue', require('./components/total-revenue.vue').default);
+Vue.component('total-orders', require('./components/ordersList.vue').default);
+Vue.component('performance-history', require('./components/performance.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

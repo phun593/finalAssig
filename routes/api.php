@@ -20,3 +20,6 @@ Route::post('/newProduct','PostController@create');
 Route::get('/productList','PostController@show');
 Route::post('/buy-item','PostController@buyItem');
 Route::get('/total','PostController@total');
+Route::get('/total-orders','PostController@orders');
+Route::get('/best','PostController@best');
+Route::get('/worst','PostController@worst');
