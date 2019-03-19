@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-12 grid-margin">
       <div class="card">
+        
         <div class="card-body" v-for = 'item in productList'>
           <h5 class="card-title mb-4">{{item.name}}</h5>
           <div class="fluid-container">
@@ -51,9 +52,12 @@ export default {
 
     Event.$on('itemCreated',(name) => {
       this.productList.push(name);
+    
+    });
+    Event.$on('itemPrice',(price) => {
       this.productList.push(price);
-    }
-    );
+    
+    });
   },
   methods:{
     buyItem(item){

@@ -1851,6 +1851,9 @@ __webpack_require__.r(__webpack_exports__);
       Event.$emit('itemCreated', {
         name: this.name
       });
+      Event.$emit('itemPrice', {
+        price: this.price
+      });
     }
   }
 });
@@ -2030,6 +2033,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2046,7 +2050,8 @@ __webpack_require__.r(__webpack_exports__);
     });
     Event.$on('itemCreated', function (name) {
       _this.productList.push(name);
-
+    });
+    Event.$on('itemPrice', function (price) {
       _this.productList.push(price);
     });
   },

@@ -69,8 +69,8 @@ class PostController extends Controller
     {
 
 
-      
-        $item = newProduct::all();
+       
+        $item = newProduct::orderBy('created_at','desc')->get();
         $data['item'] = $item;
         return($item);
         

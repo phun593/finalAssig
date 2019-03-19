@@ -62,6 +62,7 @@
         
         axios.post('/api/newProduct',this.$data);
           Event.$emit('itemCreated',{ name:this.name});
+          Event.$emit('itemPrice',{ price:this.price});
         
         
 
