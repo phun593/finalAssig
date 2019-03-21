@@ -13,15 +13,15 @@
             
             <div class="form-group">
               <label for="exampleInputEmail1">Name</label>
-              <input type="" class="form-control" v-model="name" placeholder="Product Name">
+              <input type="" class="form-control" v-model="name" placeholder="Product Name" required="name">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Price</label>
-              <input type="" class="form-control" v-model="price" placeholder="Price">
+              <input type="" class="form-control" v-model="price" placeholder="Price" required="price">
             </div>
             <div class="form-group">
               <label for="exampleTextarea1">Discription</label>
-              <textarea class="form-control" v-model="discription" rows="6"></textarea>
+              <textarea class="form-control" v-model="discription" rows="6" required="discription"></textarea>
             </div>
             <button type="submit" class="btn btn-success mr-2">Udate</button>
             
@@ -60,9 +60,10 @@
       addProduct(){
          // alert (5);
         
-        axios.post('/api/newProduct',this.$data);
-          Event.$emit('itemCreated',{ name:this.name});
-          Event.$emit('itemPrice',{ price:this.price});
+        axios.post('/api/newProduct',this.$data)
+        .then(response => alert('Item Add success '))
+          Event.$emit('itemCreated',{name:this.name});
+          // Event.$emit('itemPrice',{ price:this.price});
         
         
 

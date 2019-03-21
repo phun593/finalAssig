@@ -1847,13 +1847,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addProduct: function addProduct() {
       // alert (5);
-      axios.post('/api/newProduct', this.$data);
+      axios.post('/api/newProduct', this.$data).then(function (response) {
+        return alert('Item Add success ');
+      });
       Event.$emit('itemCreated', {
         name: this.name
-      });
-      Event.$emit('itemPrice', {
-        price: this.price
-      });
+      }); // Event.$emit('itemPrice',{ price:this.price});
     }
   }
 });
@@ -2050,8 +2049,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     Event.$on('itemCreated', function (name) {
       _this.productList.push(name);
-    });
-    Event.$on('itemPrice', function (price) {
+
       _this.productList.push(price);
     });
   },
@@ -2060,6 +2058,9 @@ __webpack_require__.r(__webpack_exports__);
       // this.buybutton =false;
       item.buy = true;
       axios.post('/api/buy-item', item);
+      Event.$emit('buyItem', {
+        price: this.price
+      });
     }
   }
 });
@@ -2109,6 +2110,9 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/total').then(function (response) {
       return _this.total = response.data;
+    });
+    Event.$on('buyItem', function (price) {
+      _this.total + price;
     });
   }
 });
@@ -37248,7 +37252,11 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "", placeholder: "Product Name" },
+                    attrs: {
+                      type: "",
+                      placeholder: "Product Name",
+                      required: "name"
+                    },
                     domProps: { value: _vm.name },
                     on: {
                       input: function($event) {
@@ -37276,7 +37284,11 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "", placeholder: "Price" },
+                    attrs: {
+                      type: "",
+                      placeholder: "Price",
+                      required: "price"
+                    },
                     domProps: { value: _vm.price },
                     on: {
                       input: function($event) {
@@ -37304,7 +37316,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { rows: "6" },
+                    attrs: { rows: "6", required: "discription" },
                     domProps: { value: _vm.discription },
                     on: {
                       input: function($event) {

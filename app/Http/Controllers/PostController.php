@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\newProduct;
 use \App\BuyItem;
+use Validator;
 class PostController extends Controller
 {
     /**
@@ -31,12 +32,24 @@ class PostController extends Controller
     public function create(Request $request)
 
     {
+         $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'price' => 'required',
+            'discription' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('required')
+            ->withErrors($validator)
+            ->withInput();
+        }
 
         $item = new newProduct;
         $item->name = $request->input('name');
         $item->price = $request->input('price');
         $item->discription = $request->input('discription');
         $item->save();
+
+        // return['message' => '$item Created!'];
 
     }
 

@@ -52,20 +52,19 @@ export default {
 
     Event.$on('itemCreated',(name) => {
       this.productList.push(name);
-    
-    });
-    Event.$on('itemPrice',(price) => {
       this.productList.push(price);
     
     });
-  },
+      },
   methods:{
     buyItem(item){
 
        // this.buybutton =false;
       item.buy = true;
 
-      axios.post('/api/buy-item',item);
+      axios.post('/api/buy-item',item)
+      Event.$emit('buyItem',{price:this.price});
+
     }
 
   },

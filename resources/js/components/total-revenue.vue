@@ -35,7 +35,13 @@ export default {
   
   created() {
         axios.get('/api/total')
-        .then(response => this.total = response.data);
+        .then(response => this.total = response.data)
+          Event.$on('buyItem',(price) => {
+
+          this.total + price
+        
+    
+    });
         
         
 

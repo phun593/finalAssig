@@ -67,8 +67,7 @@
        	;
         
        	axios.get('/api/worst')
-       	.then(responce => this.worst = responce.data)
-       	;
+       	.then(responce => this.worst = responce.data);
         
   // console.log(this.like);
 
